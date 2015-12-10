@@ -1,0 +1,39 @@
+Installation
+============
+
+  DynaGuard relies on Pin (http://www.pintool.org), which is a dynamic binary
+instrumentation (DBI) framework from Intel. In order to install DynaGuard you
+first need a working copy on the latest Pin build, as well as the essential
+build tools for GNU/Linux (i.e., GCC, GNU Make, etc.).
+
+  The simplest way to compile this package is the following:
+
+  1. Extract the latest Pin build. Assuming that it was extracted in
+     `/usr/src/pin', we shall refer to that path as Pin's root path
+      from now on.
+
+  2. Type `export PIN_HOME=/usr/src/pin' to set the environment
+     variable PIN_HOME to the root path of Pin. Replace `/usr/src/pin'
+     with *your* root path.
+
+  3. `cd' to the directory dynaguard_pin/, which contains the source code for
+     the DBI version of DynaGuard and type `make' to compile.
+     NOTE: you may also need libbsd-dev; in Debian GNU/Linux (or in any other
+           Debian-based distribution) type `sudo apt-get install libbsd-dev'
+           to install it.
+
+
+Usage
+=====
+
+  After building the DynaGuard pintool you can apply it directly in unmodified
+x86/x86-64 Linux binaries as follows (assuming that Pin in installed in
+`/usr/src/pin', and the DynaGuard pintool lies in your local home directory):
+
+    /usr/src/pin/pin.sh -follow_execv -t ~/dynaguard.so -- <executable>
+
+Compilers and Options
+=====================
+
+  Tested with gcc/g++ 4.7.x on Debian GNU/Linux v7 (wheezy) and gcc/g++ 4.9.x on
+Debian GNU/Linux v8 (jessie).

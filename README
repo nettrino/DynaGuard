@@ -1,0 +1,29 @@
+General
+=======
+
+  Over the past decade, a wide range of exploit mitigation techniques has been
+introduced to defend against memory corruption attacks. W^X, ASLR, and
+canary-based protections are nowadays widely deployed and considered standard
+practice. However, despite the fact that these techniques have evolved over
+time, they still suffer from limitations that enable skilled adversaries to
+bypass them.
+
+  DynaGuard is an extension to canary-based protections that further armors
+hardened applications against the byte-by-byte discovery of (stack) canaries
+in forking programs. DynaGuard is available in two flavors: a compiler-based
+one, operating at the source code level, and a dynamic binary
+instrumentation-based one that protects binary-only applications without
+requiring access to source code.
+
+  For a detailed description of DynaGuard, please refer to the following paper:
+
+  "DynaGuard: Armoring Canary-based Protections against Brute-force Attacks."
+  In Proc. of the 2015 Annual Computer Security Applications Conference (ACSAC).
+
+
+Installation
+============
+
+  For further details on installing (and running) the DBI- or compiler-based
+version of DynaGuard, please refer to the respective README file in the
+dynaguard_pin/ or dynaguard_gcc/ directory.
