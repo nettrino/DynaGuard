@@ -14,14 +14,13 @@ Compilation
 
   3.  Compile your application with the following (GNU GCC) flags:
 
-        `-fstack-protector'
-        `-fno-omit-frame-pointer'
+        `-fstack-protector(-strong/-all)'
         `-fplugin=<PATH>/dynaguard.so'
 
       For instance, to compile a file named `test.c', located at the same
       directory with the DynaGuard GCC plugin, you may type:
 
-        `gcc -fstack-protector -fno-omit-frame-pointer -fplugin=./dynaguard.so \
+        `gcc -fstack-protector -fplugin=./dynaguard.so \
          test.c -o test'
 
   4. Once an executable is compiled with the DynaGuard GCC plugin, you can 
